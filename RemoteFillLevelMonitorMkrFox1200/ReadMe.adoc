@@ -1,0 +1,57 @@
+:Author: 3magku
+:Date: 14/11/2017
+:Revision: version#
+:License: Public Domain
+
+= Project: Remote Fill-level Monitor
+
+Remote fill-level monitor using Arduino MKRFox1200
+
+== Step 1: Installation
+
+1. Open this file
+2. Edit as you like
+3. Release to the World!
+
+;)
+
+== Step 2: Assemble the circuit
+
+Assemble the circuit following the diagram layout.png attached to the sketch
+
+== Step 3: Load the code
+
+Upload the code contained in this sketch on to your board
+
+=== Folder structure
+
+....
+ RemoteFillLevelMonitorMkrFox1200                => Arduino sketch folder
+  ├── RemoteFillLevelMonitorMkrFox1200.ino       => main Arduino file
+  ├── layout.png                                 => (optional) an image of the layout
+  └── ReadMe.adoc                                => this file
+....
+
+=== License
+This project is released under a GNU General Public License v3.0 License.
+
+=== Contributing
+To contribute to this project please contact 3magku 
+=== BOM
+Add the bill of the materials you need for this project.
+
+|===
+| ID      | Part name           | Part number | Quantity
+| BOARD   | Arduino MKRFox1200  | ABX00014    | 1        
+| S1      | Push button         | n/a         | 1        
+| S2      | Push button         | n/a         | 1
+| S3      | Push button         | n/a         | 1
+| S4      | Tilt switch         | n/a         | 1
+| TOFDRS  | VL6180X             | n/a         | 1
+|===
+
+
+=== Help
+This document is written in the _AsciiDoc_ format, a markup language to describe documents. 
+If you need help you can search the http://www.methods.co.nz/asciidoc[AsciiDoc homepage]
+or consult the http://powerman.name/doc/asciidoc[AsciiDoc cheatsheet]
