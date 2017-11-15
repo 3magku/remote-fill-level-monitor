@@ -192,7 +192,7 @@ void loop()
       break;
     case 2:
       // Regarding this as calibration event for high range value ...
-      message.mode[0] = 'C' ; message.mode[1] = 'H'; // CR = Calibration High
+      message.mode[0] = 'C' ; message.mode[1] = 'H'; // CH = Calibration High
       message.value_high = vl_range;
       break;
     case 3:
@@ -237,7 +237,7 @@ void loop()
     Serial1.println("INFO: SigFox: Sending ...");
   }
   SigFox.beginPacket();
-  SigFox.write((uint8_t*)&message, 12);
+  SigFox.write((uint8_t*)&message, sizeof(message));
   int ret = SigFox.endPacket();
 
   // Back to standby
@@ -368,7 +368,17 @@ void vlRead() {
 void vlRead() {
   vl_status = 0;
   vl_lux = 42;
-  vl_range = vl_range + 1;
+  switch (trigger_id) {
+    case 1:
+      vl_range = 42;
+      break;
+    case 2:
+      vl_range = 168;
+      break;
+    case 3:
+      vl_range = vl_range + 7;
+      break;
+  }
   if ( debug == true ) {
     Serial1.println("WARNING: No ToFDRS defined!!!");
     Serial1.print("INFO: DUMMY: Lux: "); Serial1.println(vl_lux);
